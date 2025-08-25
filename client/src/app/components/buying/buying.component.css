@@ -1,0 +1,35 @@
+
+
+.bg-done{
+    background-color: aqua;
+ }
+ *{
+   font-family: cursive;
+     font-size: 30px;
+     margin: 30px;
+ }
+ 
+ td{
+   padding-left: 70px;
+   border-bottom: 1px solid black;
+ }
+ 
+ th{
+   font-size:35px;
+   padding:40px;
+   color: crimson;
+   border-bottom: 1px solid black;
+  }
+  
+ button{
+   border: none;
+   color: aqua;
+   background-color: white;
+ }
+ 
+ button:hover{
+  color: crimson;
+ }
+
+
+ 

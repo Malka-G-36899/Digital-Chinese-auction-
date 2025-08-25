@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <tr>
+            <th>number</th>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (d of donatorList.list$|async; track $index) {
+        <tr (click)="setSelected($index,d.id)" [class.bg-done]="selectedIndex==$index">
+            <td>{{d.code}}</td>
+            <td>{{d.id}}</td>
+            <td>{{d.name}}</td>
+            }
+    </tbody>
+    <button (click)="insert()"> insert</button>
+</table>
+
+@if(flag!=-1 ){
+<button (click)="edit()">edit</button>
+<button (click)="cancel()">delete</button>
+
+
+}

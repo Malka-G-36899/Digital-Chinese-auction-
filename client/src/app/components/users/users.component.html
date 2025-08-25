@@ -1,0 +1,29 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>phone</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        @for (u of userList.list$|async; track $index) {
+        <tr (click)="setSelected($index,u.id)" [class.bg-done]="selectedIndex==$index">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.phone}}</td>
+            
+            }
+    </tbody>
+
+</table>
+
+<button (click)="insert()"> insert</button>
+<!-- @if(flag!=-1 ){
+<button (click)="edit()">edit</button>
+<button (click)="cancel()">delete</button>
+} -->
+

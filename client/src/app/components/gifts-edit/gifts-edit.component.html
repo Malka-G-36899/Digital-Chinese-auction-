@@ -1,0 +1,54 @@
+<div>
+    <form [formGroup]="frmGift">
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="number">number</label>
+            </div>
+            <div class="col">
+                <input type="number" name="txtNumber" value="{{gift.id}}" [(ngModel)]="gift.id" />
+            </div>
+            <div class="col col-4 control-label">
+            </div>
+            <div class="col">
+                <label for="name">name</label><br>
+                <input type="text" name="txtName" [(ngModel)]="gift.name" formControlName="name"
+                [class.border-danger]="frmGift.controls['name'].invalid"/>
+                @if(frmGift.controls['name'].errors ){
+                <div class="text-danger" *ngIf="frmGift.controls['name'].errors['required']">please fil your name</div>
+                <div class="text-danger" *ngIf="frmGift.controls['name'].errors['minlength']">name must consist at least 3 chars</div>
+                <div class="text-danger" *ngIf="frmGift.controls['name'].errors['maxlength']">name must consist maximum 10 chars</div>
+                }
+           
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="price">donator</label>
+            </div>
+            <select [(ngModel)]="gift.donater" [ngModelOptions]="{standalone:true}">
+                @for(d of donatorList.list$|async ;track $index){
+                <option value={{d.name}}>{{d.name}}</option>
+                }
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="price">price</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="number" name="txtPrice" [(ngModel)]="gift.price" 
+                formControlName="price"
+                [class.border-danger]="frmGift.controls['price'].invalid"/>
+                @if(frmGift.controls['price'].errors ){
+                    <div class="text-danger" *ngIf="frmGift.controls['price'].errors['required']">please fill the price</div>
+                    }
+
+            </div>
+        </div>
+        <button (click)="save()">save</button>
+        <button (click)="cancel()">cancel</button>
+    </form>
+
+</div>

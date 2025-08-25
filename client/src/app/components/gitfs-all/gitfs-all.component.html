@@ -1,0 +1,15 @@
+
+
+<div>
+    <app-gift [(selectedIndex)]="selectedIndex"/>
+    @if(selectedIndex >= 0){
+      
+        <div style="margin-top: 20px;">
+
+            <app-gifts-edit [(selectedIndex)]="selectedIndex"></app-gifts-edit>
+        </div>
+        }
+
+</div>
+
+

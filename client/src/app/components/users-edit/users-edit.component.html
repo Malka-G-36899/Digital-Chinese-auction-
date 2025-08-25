@@ -1,0 +1,33 @@
+<div>
+    <form>
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="number">id</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="number" name="txtNumber"  [(ngModel)]="user.id" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="name">name</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="txtId" [(ngModel)]="user.name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="name">phone</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="txtName" [(ngModel)]="user.phone" />
+            </div>
+        </div>
+        
+      
+        <button (click)="save()">save</button>
+        <button (click)="cancel()">cancel</button>
+    </form>
+
+</div>

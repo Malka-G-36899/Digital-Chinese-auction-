@@ -1,0 +1,10 @@
+<div>
+    <app-users [(selectedIndex)]="selectedIndex"></app-users>
+    @if(selectedIndex >= 0){
+        <div style="margin-top: 20px;">
+         
+            <app-users-edit [(selectedIndex)]="selectedIndex"></app-users-edit>
+        </div>
+        }
+ 
+</div>

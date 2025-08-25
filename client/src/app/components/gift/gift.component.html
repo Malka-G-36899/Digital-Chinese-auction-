@@ -1,0 +1,32 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>number</th>
+            <th>name</th>
+            <th>donator</th>
+            <th>price</th> 
+            <th>winner</th>      
+            
+        </tr>
+    </thead>
+    <tbody>
+        @for (g of giftList.list$|async; track $index) {
+        <tr (click)="setSelected($index,g.id)" [class.bg-done]="selectedIndex==$index">
+            <td>{{g.id}}</td>
+            <td>{{g.name}}</td>
+            <td>{{g.donater}}</td>
+            <td>{{g.price}}</td>
+            <td>{{g.winner}}</td>
+            <td></td>
+            }
+    </tbody>
+
+</table>
+
+<button (click)="insert()"> insert</button>
+@if(flag!=-1 ){
+<button (click)="edit()">edit</button>
+<button (click)="cancel()">delete</button>
+}
+

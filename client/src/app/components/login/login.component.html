@@ -1,0 +1,43 @@
+
+
+<div>
+<span>to login fill your details</span><br>
+<div id="form">
+    <form>
+        <div id="d">
+            <div id="label">
+                <label for="id">id</label>
+            </div>
+            <div>
+                <input type="text" name="id" [(ngModel)]="user.id" />
+            </div>
+        </div>
+        <div id="d">
+            <div id="label">
+                <label for="txtName">name</label>
+            </div>
+            <div>
+                <input type="text" name="txtName" [(ngModel)]="user.name" />
+            </div>
+        </div>
+       
+        <div id="d">
+            <div id="label">
+                <label for="phone">phone</label>
+            </div>
+            <div>
+                <input type="text" name="phone" [(ngModel)]="user.phone" />
+            </div>
+        </div>
+       
+        <div id="d">
+            <button (click)="continue()">finish</button>
+         
+        </div>
+    </form>
+</div>
+</div>
+
+
+
+

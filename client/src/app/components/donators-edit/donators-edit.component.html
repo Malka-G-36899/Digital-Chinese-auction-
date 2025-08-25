@@ -1,0 +1,45 @@
+<div>
+    <form [formGroup]="frmDonator">
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="number">code</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="number" name="txtNumber"  [(ngModel)]="donator.code" 
+                formControlName="code"
+                [class.border-danger]="frmDonator.controls['code'].invalid"/>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="name">id</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="txtId" [(ngModel)]="donator.id" 
+                formControlName="id"
+                [class.border-danger]="frmDonator.controls['id'].invalid"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-4 control-label">
+                <label for="name">name</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="txtName" [(ngModel)]="donator.name" 
+                formControlName="name"
+                [class.border-danger]="frmDonator.controls['name'].invalid"/>
+                @if(frmDonator.controls['name'].errors ){
+                    <div class="text-danger" *ngIf="frmDonator.controls['name'].errors['required']"> please fill your name</div>
+                    <div class="text-danger" *ngIf="frmDonator.controls['name'].errors['minlength']">name must consist at least 3 chars</div>
+                    <div class="text-danger" *ngIf="frmDonator.controls['name'].errors['maxlength']">name must consist maximum 10 chars</div>
+                    }
+            </div>
+        </div>
+        
+      
+        <button (click)="save()">save</button>
+        <button (click)="cancel()">cancel</button>
+    </form>
+
+</div>

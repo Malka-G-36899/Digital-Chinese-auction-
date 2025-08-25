@@ -1,0 +1,10 @@
+<div>
+    <app-donators [(selectedIndex)]="selectedIndex"></app-donators>
+    @if(selectedIndex >= 0){
+        <div style="margin-top: 20px;">
+         
+            <app-donators-edit [(selectedIndex)]="selectedIndex"></app-donators-edit>
+        </div>
+        }
+ 
+</div>

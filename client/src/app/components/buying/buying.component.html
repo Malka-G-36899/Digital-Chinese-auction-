@@ -1,0 +1,55 @@
+<table>
+    <thead>
+        <tr>
+            <th>number</th>
+            <th>name</th>
+            <th>brigrer</th>
+            <th>price</th>
+            <th>count</th>
+            <th>customers</th>
+            <th>winner</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- the origional code -->
+        <!-- @for (g of giftList.list$|async; track $index) {
+        <tr (click)="setSelected($index,g.id)" [class.bg-done]="selectedIndex==$index">
+            <td>{{g.id}}</td>
+            <td>{{g.name}}</td>
+            <td>{{g.donater}}</td>
+            <td>{{g.price}}</td>
+            <td>
+                <button (click)="plus($index)">+</button>
+                {{userGifts[$index]}}
+                <button (click)="minus($index)">-</button>
+            </td>
+            <td>
+                @for (gc of g.users; track $index) {
+                <div>{{gc}}</div>}
+            </td>
+          
+            <td>{{g.winner}}</td>
+        </tr>} -->
+        @for (g of gifts; track $index) {
+            <tr (click)="setSelected($index,g.id)" [class.bg-done]="selectedIndex==$index">
+                <td>{{g.id}}</td>
+                <td>{{g.name}}</td>
+                <td>{{g.donater}}</td>
+                <td>{{g.price}}</td>
+                <td>
+                    <button (click)="plus($index)">+</button>
+                    {{userGifts[$index]}}
+                    <button (click)="minus($index)">-</button>
+                </td>
+                <td>
+                    @for (gc of g.users; track $index) {
+                    <div>{{gc}}</div>}
+                </td>
+              
+                <td>{{g.winner}}</td>
+            </tr>}
+    </tbody>
+</table>
+<div>the sum for paying:{{sum}}</div>
+<button (click)="pay()"> i want to pay</button>
+<button (click)="rand()"> random</button>

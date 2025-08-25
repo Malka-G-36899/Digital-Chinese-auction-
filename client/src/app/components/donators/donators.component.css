@@ -1,0 +1,25 @@
+
+.bg-done{
+    background-color: aqua;
+ }
+ *{
+   font-family: cursive;
+     font-size: 30px;
+     margin: 10px;
+ }
+ td{
+   padding-left: 100px;
+   font-size: 30px;
+ }
+ 
+ th{
+   font-size: 40px;
+   padding:80px;
+   color: crimson;
+  }
+  
+ button{
+   border: none;
+   color: aqua;
+   background-color: white;
+ }
